@@ -1,0 +1,13 @@
+.image-grid {
+    display: grid; /* Usar grid layout para melhor controle */
+    grid-template-columns: repeat(2, 1fr); /* Uma colunas */
+    gap: 5px; /* Espaçamento entre as imagens */
+    margin: 25px;
+  }
+
+
+  @media screen and (max-width: 1200px) {
+    .image-grid {
+      grid-template-columns: repeat(1, 1fr); /* Uma coluna */
+    }
+  }

@@ -1,0 +1,84 @@
+/* Estilos gerais */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.title-about {
+    font-size: 0px;
+}
+
+/* Estilos para as seções */
+.main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.section {
+    overflow-y: hidden;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.section .image img {
+    width: 410px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    display: block;
+}
+
+.section .content {
+    padding: 25px;
+    overflow-y: auto; /* Adicionado para permitir a rolagem dentro das seções */
+}
+
+.section h3 {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 5px; /* Espaçamento menor abaixo do h3 */
+
+}
+
+p {
+    text-align: justify;
+    font-weight: 600;
+    margin-right: 50px;
+
+}
+
+
+/* Estilos para dispositivos com até 1200px de largura */
+@media (max-width: 1200px) {
+    /* Alterando o layout da seção */
+    .section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Estilos para a imagem */
+    .section .image img {
+        width: 100%;
+        object-fit: cover;
+        display: block;
+        margin-left: 0;
+    }
+
+    /* Estilos para o conteúdo (título e texto) */
+    .section .content {
+        text-align: center; /* Centralizando o texto */
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Estilos específicos para o título h3 dentro da seção */
+    .section h3 {
+        margin: 0; /* Removendo a margem superior */
+    }
+
+    .section p{
+        margin: 25px;
+    }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/projetos.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <title>Projetos</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="./index.html">
+        <div class="logo">
+          <img src="img/logopreta.PNG" alt="Logo">
+        </div>
+      </a>
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+  
+      <nav>
+        <ul class="nav-list">
+          <li class="logo-item">
+            <a href="./index.html">
+              <div class="logo">
+                <img src="img/logopreta.PNG" alt="Logo">
+              </div>
+            </a>
+          </li>
+          <li><a href="./projetos.html">Projetos</a></li>
+          <li><a href="./obras.html">Obras Concluídas</a></li>
+          <li><a href="./sobrenos.html">Sobre nós</a></li>
+          <li><a href="./contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="projetos">
+      <div class="grid-container">
+        <a href="./pags/apesiqueira.html" class="projeto-item">
+          <img src="./img/projetos/apesiqueira/1.jpg" alt="Projeto 1">
+          <h3>Apê Siqueira</h3>
+          <h2>Cataguases, MG - 2025</h2>
+        </a>
+        <a href="./pags/ecosuites.html" class="projeto-item">
+          <img
+            src="./img/projetos/01 - ECO SUÍTES VILA NEBLINA/doisdois_casa_serradaneblina_studiocatá_01.jpg"
+            alt="Projeto 2"
+            loading="lazy"
+          />
+          <h3>Eco Suítes Vila Neblina</h3>
+          <h2>APA Serra da Neblina | Cataguases, MG - 2025</h2>
+        </a>
+        <a href="./pags/maxhaus.html" class="projeto-item">
+          <img
+            src="./img/projetos/02 - PROJETO APARTAMENTO MAXHAUS - SP - 2024/ImagemFinal_05.png"
+            alt="Projeto 2"
+            loading="lazy"
+          />
+          <h3>Projeto Apartamento Maxhaus</h3>
+          <h2>São Paulo, SP - 2024</h2>
+        </a>
+        <a href="./pags/domus.html" class="projeto-item">
+          <img
+            src="./img/projetos/03 - PROJETO DOMUS - PARATY, RJ - 2023/doisdois_glamping_studiocata_01_se.jpg"
+            alt="Projeto 2"
+            loading="lazy"
+          />
+          <h3>Projeto Domus</h3>
+          <h2>Paraty, RJ - 2023</h2>
+        </a>
+        <a href="./pags/rochedo.html" class="projeto-item">
+          <img
+            src="./img/projetos/04 - CASA ROCHEDO - PARATY, RJ - 2022/01_studiodoisdois.jpg"
+            alt="Projeto 2"
+            loading="lazy"
+          />
+          <h3>Casa Rochedo</h3>
+          <h2>Paraty, RJ - 2022</h2>
+        </a>
+        <a href="./pags/anexo.html" class="projeto-item">
+          <img
+            src="./img/projetos/05 - CASA ANEXO - CUNHA, SP - 2022/doisdois_cunhasp_04.jpg"
+            alt="Projeto 2"
+            loading="lazy"
+          />
+          <h3>Casa Anexo</h3>
+          <h2>Cunha, SP - 2022</h2>
+        </a>
+        <a href="./pags/ribeiraodasneves.html" class="projeto-item">
+          <img
+            src="./img/projetos/06 - CASA CLÉO - RIBEIRÃO DAS NEVES, MG - 2023/FACHADA.jpg"
+            alt="Projeto 2"
+            loading="lazy"
+          />
+          <h3>Ribeirão das Neves</h3>
+          <h2>Minas Gerais - 2023</h2>
+        </a>
+        <a href="./pags/nostra.html" class="projeto-item">
+          <img
+            src="./img/projetos/07 - CERVEJARIA NOSTRA - SOBRAL PINTO, MG - 2021/39_24 - Foto.jpg"
+            alt="Projeto 2"
+            loading="lazy"
+          />
+          <h3>Cervejaria Nostra</h3>
+          <h2>Sobral Pinto, MG - 2021</h2>
+        </a>
+      </div>
+    </section>
+
+    <script src="./js/header.js"></script>
+    <script>
+      // Fade-in ao carregar imagens
+      document.querySelectorAll('.image-container img').forEach(img => {
+        if (img.complete) {
+          img.classList.add('loaded');
+        }
+        img.addEventListener('load', () => {
+          img.classList.add('loaded');
+        });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/blurhash-image@1.1.0/dist/blurhash-image.min.js"></script>
+    <script>
+      BlurhashImage.init({
+        selector: '.image-container img',
+        blurhash: 'L5H2EC=PM+yV0g-mq.wG9c010J}I' // Hash de exemplo
+      });
+    </script>
+    <script>
+      // Verifica se a imagem já está carregada OU usa Intersection Observer
+      const handleImageLoad = (img) => {
+        if (img.complete) {
+          img.classList.add('loaded');
+        } else {
+          img.addEventListener('load', () => {
+            img.classList.add('loaded');
+          });
+        }
+      };
+    
+      // Observa quando a imagem entra na viewport
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            handleImageLoad(img);
+            observer.unobserve(img);
+          }
+        });
+      });
+    
+      // Aplica a todos os placeholders
+      document.querySelectorAll('.image-container img').forEach(img => {
+        observer.observe(img);
+      });
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+  </body>
+</html>
