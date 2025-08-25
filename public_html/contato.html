@@ -47,7 +47,7 @@
         </div>
         <div class="right">
         <h2>Entre em contato conosco:</h2>  
-          <form id="contactForm">
+          <form action="https://formspree.io/f/SEU_FORM_ID" method="POST" id="contactForm">
             <input type="text" name="nome" placeholder="Nome completo" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="tel" name="telefone" placeholder="Telefone" required>
@@ -73,42 +73,17 @@
       </div>
       <script src="./js/header.js"></script>
       <script>
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-          e.preventDefault();
-          
-          const formData = new FormData(this);
-          const data = Object.fromEntries(formData);
-          
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
           const button = this.querySelector('button[type="submit"]');
           const originalText = button.textContent;
           button.textContent = 'Enviando...';
           button.disabled = true;
           
-          try {
-            const response = await fetch('/api/contact', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(data)
-            });
-            
-            const result = await response.json();
-            
-            const messageDiv = document.getElementById('formMessage');
-            if (response.ok) {
-              messageDiv.innerHTML = '<p style="color: green;">Mensagem enviada com sucesso!</p>';
-              this.reset();
-            } else {
-              messageDiv.innerHTML = '<p style="color: red;">Erro ao enviar mensagem: ' + result.message + '</p>';
-            }
-          } catch (error) {
-            const messageDiv = document.getElementById('formMessage');
-            messageDiv.innerHTML = '<p style="color: red;">Erro ao enviar mensagem. Tente novamente.</p>';
-          } finally {
-            button.textContent = originalText;
-            button.disabled = false;
-          }
+          const messageDiv = document.getElementById('formMessage');
+          messageDiv.innerHTML = '<p style="color: blue;">Enviando mensagem...</p>';
+          
+          // O formulário será enviado automaticamente pelo Formspree
+          // Após o envio, o usuário será redirecionado para uma página de sucesso
         });
       </script>
 </body>
