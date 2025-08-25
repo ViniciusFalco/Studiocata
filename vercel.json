@@ -5,10 +5,5 @@
       "src": "/(.*)",
       "dest": "/public_html/$1"
     }
-  ],
-  "functions": {
-    "api/contact.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  ]
 }
