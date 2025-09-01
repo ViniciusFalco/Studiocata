@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
+    <link rel="icon" type="image/png" href="./img/logopreta.PNG">
+    <title>Contato - Studio Cata</title>
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/contato.css">
+    <link rel="stylesheet" href="./css/footer.css">
 </head>
 <body>
 
@@ -38,53 +40,75 @@
           <li><a href="./contato.html">Contato</a></li>
         </ul>
       </nav>
-  </header>
+    </header>
     <!--Final do Cabeçalho-->
 
-    <div class="container">
-        <div class="left">
-          <img src="./img/obras/cozinhamineira-capa.jpg" alt="Imagem de exemplo">
-        </div>
-        <div class="right">
-        <h2>Entre em contato conosco:</h2>  
-          <form action="https://formspree.io/f/SEU_FORM_ID" method="POST" id="contactForm">
-            <input type="text" name="nome" placeholder="Nome completo" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="tel" name="telefone" placeholder="Telefone" required>
-            <textarea name="mensagem" placeholder="Mensagem"></textarea>
-            <button type="submit">Enviar</button>
-          </form>
-          <div id="formMessage"></div>
-          <div class="buttons">
-            <a href="https://api.whatsapp.com/send?phone=seu_numero_de_telefone" target="_blank">
-              <div class="whatsapp">
-                <img class="whatsapp-logo" src="./img/whatsApp-Logo.png" alt="Ícone do WhatsApp">
-                <span>Contato via Whatsapp</span>
-              </div>
-            </a>
-            <a href="https://www.instagram.com/studiocataarquitetura/" target="_blank">
-              <div class="instagram">
-                <img src="./img/instagram-logo.png" alt="Ícone do Instagram">
-                <span>Conheça nosso Instagram</span>
-              </div>
-            </a>
-          </div>
+    <section id="contato" class="contact">
+      <div class="contact-hero" aria-hidden="true">
+        <!-- JS setará a imagem de fundo a partir do portfólio -->
+        <span class="contact-hero__overlay" aria-hidden="true"></span>
+      </div>
+
+      <div class="contact-wrap">
+        <header class="contact-head">
+          <h1 class="contact-title">Contato</h1>
+          <p class="contact-sub">
+            Vamos conversar sobre o seu projeto?
+          </p>
+        </header>
+
+        <div class="contact-grid" role="list">
+          <!-- WhatsApp -->
+          <a
+            role="listitem"
+            class="tile tile--whatsapp"
+            href="https://wa.me/5555999999999?text=Olá%2C%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20arquitetura."
+            target="_blank" rel="noopener"
+            aria-label="Falar no WhatsApp"
+          >
+            <span class="tile-icon" aria-hidden="true">
+              <!-- Ícone WhatsApp SVG -->
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+                <path d="M20.52 3.48A11.94 11.94 0 0 0 12.01 0C5.39 0 .03 5.36.03 11.98c0 2.11.55 4.16 1.61 5.98L0 24l6.2-1.62a12.02 12.02 0 0 0 5.81 1.48h.01c6.62 0 11.98-5.36 11.98-11.99A11.93 11.93 0 0 0 20.52 3.48ZM12.02 21.5h-.01a9.49 9.49 0 0 1-4.84-1.33l-.35-.2-3.69.96.99-3.6-.23-.37a9.49 9.49 0 1 1 8.13 4.54Zm5.49-7.2c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.16-.18.2-.35.22-.65.07-.3-.15-1.28-.47-2.44-1.5-.9-.8-1.5-1.77-1.67-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.13 3.26 5.17 4.57.72.31 1.28.5 1.73.64.73.23 1.39.2 1.92.12.59-.09 1.77-.72 2.02-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/>
+              </svg>
+            </span>
+            <div class="tile-texts">
+              <span class="tile-title">WhatsApp</span>
+              <span class="tile-cta">Iniciar conversa →</span>
+            </div>
+          </a>
+
+          <!-- Instagram -->
+          <a
+            role="listitem"
+            class="tile tile--instagram"
+            href="https://instagram.com/studiocataarquitetura"
+            target="_blank" rel="noopener"
+            aria-label="Visitar perfil no Instagram"
+          >
+            <span class="tile-icon" aria-hidden="true">
+              <!-- Ícone Instagram SVG -->
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+                <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7Zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3Zm11 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/>
+              </svg>
+            </span>
+            <div class="tile-texts">
+              <span class="tile-title">Instagram</span>
+              <span class="tile-cta">Seguir perfil →</span>
+            </div>
+          </a>
         </div>
       </div>
-      <script src="./js/header.js"></script>
-      <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-          const button = this.querySelector('button[type="submit"]');
-          const originalText = button.textContent;
-          button.textContent = 'Enviando...';
-          button.disabled = true;
-          
-          const messageDiv = document.getElementById('formMessage');
-          messageDiv.innerHTML = '<p style="color: blue;">Enviando mensagem...</p>';
-          
-          // O formulário será enviado automaticamente pelo Formspree
-          // Após o envio, o usuário será redirecionado para uma página de sucesso
-        });
-      </script>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+      <div class="footer-content">
+        <p class="footer-text">Studio Catá Arquitetura - Todos os direitos reservados - 2025</p>
+      </div>
+    </footer>
+
+    <script src="./js/header.js"></script>
+    <script src="./js/contact.js"></script>
 </body>
 </html>

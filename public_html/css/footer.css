@@ -1,0 +1,94 @@
+/* Estilos do Rodapé */
+footer {
+  background-color: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Roboto Thin', sans-serif;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-text {
+  color: #666;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Responsivo para mobile */
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 15px 0;
+  }
+  
+  .footer-text {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+/* Ajuste para páginas com slider (desktop) */
+@media screen and (min-width: 1201px) {
+  .slider-wrapper + footer {
+    display: none; /* Oculta o rodapé na página inicial desktop */
+  }
+}
+
+/* Ajustes específicos para páginas de portfólio */
+.image-grid + footer {
+  margin-top: 40px;
+}
+
+/* Ajuste para páginas de contato */
+.contact + footer {
+  margin-top: 40px;
+}
+
+/* Ajuste específico para página sobre nós */
+.main + footer {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+/* Ajuste específico para página sobre nós em desktop */
+@media (min-width: 1201px) {
+  .main + footer {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    position: relative;
+    left: 0;
+    right: 0;
+    flex: none;
+    align-self: stretch;
+  }
+  
+  /* Garantir que o footer não seja afetado pelo flex do main */
+  footer {
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+}
+
+/* Ajuste específico para página sobre nós em mobile */
+@media (max-width: 1200px) {
+  .main + footer {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+}

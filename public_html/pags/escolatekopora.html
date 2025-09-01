@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/img/logopreta.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/portifolio.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <title>Escola Teko Porã</title>
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <a href="/index.html">
+        <div class="logo">
+          <img src="/img/logopreta.PNG" alt="Logo" />
+        </div>
+      </a>
+
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
+      <nav>
+        <ul class="nav-list">
+          <li class="logo-item">
+            <a href="/index.html">
+              <div class="logo">
+                <img src="/img/logopreta.PNG" alt="Logo">
+              </div>
+            </a>
+          </li>
+          <li><a href="/projetos.html">Projetos</a></li>
+          <li><a href="/obras.html">Obras Concluídas</a></li>
+          <li><a href="/sobrenos.html">Sobre nós</a></li>
+          <li><a href="/contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!--Final do cabeçalho-->
+
+    <!--Seta para cima-->
+    <div class="arrow-up" id="arrow-up">&#8593;</div>
+
+    <h1 class="titulo-portifolio">Escola Teko Porã</h1>
+
+    <!-- Botão para conhecer mais sobre o projeto -->
+    <section class="project-cta">
+      <div class="cta-container">
+        <button class="cta-button" onclick="scrollToProject()">
+          Conheça mais sobre o projeto
+          <span class="cta-arrow">↓</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="image-grid">
+      <!-- Imagens na ordem especificada: outras imagens primeiro, plantas por último -->
+      <img src="/img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekopora_1.jpg"
+        alt="Escola Teko Porã - Vista 1"
+        class="grid-image"
+        onclick="showImage('/img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekopora_1.jpg')"
+      />
+      <img src="/img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekopora_2.jpg"
+        alt="Escola Teko Porã - Vista 2"
+        class="grid-image"
+        onclick="showImage('/img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekopora_2.jpg')"
+      />
+      <img src="/img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekopora_3.jpg"
+        alt="Escola Teko Porã - Vista 3"
+        class="grid-image"
+        onclick="showImage('/img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekopora_3.jpg')"
+      />
+      <img src="/img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekopora_4.jpg"
+        alt="Escola Teko Porã - Vista 4"
+        class="grid-image"
+        onclick="showImage('/img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekopora_4.jpg')"
+      />
+      <img src="/img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekoporaplanta1.jpg"
+        alt="Escola Teko Porã - Planta 1"
+        class="grid-image"
+        onclick="showImage('/img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekoporaplanta1.jpg')"
+      />
+      <img src="/img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekoporaplanta2.jpg"
+        alt="Escola Teko Porã - Planta 2"
+        class="grid-image"
+        onclick="showImage('/img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekoporaplanta2.jpg')"
+      />
+      <!-- Fim da inserção de imagens -->
+    </section>
+
+    <!-- Seção de texto introdutório -->
+    <section id="project-details" class="project-intro">
+      <div class="intro-container">
+        <h2>Uma escola agroecológica para o <strong>Parque das Tribos, Manaus, Amazonas</strong></h2>
+        <div class="intro-text">
+          <p class="highlight-text">Na confluência entre arquitetura e cosmologia, surge a Escola Teko Porã, um projeto que procura traduzir o profundo conceito indígena de "Bem viver".</p>
+
+          <p>Localizada no Parque das Tribos, na Amazônia brasileira, este projeto surge como uma ponte entre os saberes ancestrais e os desafios contemporâneos de educação e sustentabilidade. Seu desenho não segue meramente uma função, mas procura representar uma filosofia de vida que compreende todos os seres vivos como partes inseparáveis de um mesmo organismo. Para os Baniwa, cuja cosmovisão inspira este projeto, o "Bem viver" é mais um estado de espírito no mundo cósmico, formado por relações equilibradas entre os sujeitos humanos e não humanos que o coabitam, do que uma qualidade material ou social da vida.</p>
+
+          <p>Além disso, a nova edificação busca um diálogo direto com a maloca existente no terreno, espaço com valor simbólico e núcleo vital da memória e das práticas comunitárias. O projeto assume uma geometria circular rejeitando sistemas hierárquicos tradicionais. O sistema estrutural e todos os demais elementos arquitetônicos são produzidos em madeira, concebidos como extensões da floresta e da vida comunitária.</p>
+
+          <p class="highlight-text">Seus jardins, concebidos como agroflorestas, não são apenas áreas de cultivo, mas verdadeiras salas de aula a céu aberto. Como afirma André Baniwa, "o Bem Viver é a arte de tecer, todos os dias, os fios que nos conectam ao todo".</p>
+        </div>
+      </div>
+    </section>
+
+    <script src="/js/portifolio.js"></script>
+    <script src="/js/header.js"></script>
+    <script>
+      function scrollToProject() {
+        const element = document.getElementById('project-details');
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    </script>
+    <!-- Rodapé -->
+    <footer>
+      <div class="footer-content">
+        <p class="footer-text">Studio Catá Arquitetura - Todos os direitos reservados - 2025</p>
+      </div>
+    </footer>
+
+  </body>
+</html>
+
