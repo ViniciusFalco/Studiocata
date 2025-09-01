@@ -1,0 +1,14 @@
+warning: in the working copy of 'public_html/contato.html', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/public_html/contato.html b/public_html/contato.html[m
+[1mindex 1ef804d..6b5f5ce 100644[m
+[1m--- a/public_html/contato.html[m
+[1m+++ b/public_html/contato.html[m
+[36m@@ -62,7 +62,7 @@[m
+           <a[m
+             role="listitem"[m
+             class="tile tile--whatsapp"[m
+[31m-            href="https://wa.me/5555999999999?text=Olá%2C%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20arquitetura."[m
+[32m+[m[32m            href="https://wa.me/+5532998124309?text=Olá%2C%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20arquitetura."[m
+             target="_blank" rel="noopener"[m
+             aria-label="Falar no WhatsApp"[m
+           >[m
