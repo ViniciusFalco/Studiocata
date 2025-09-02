@@ -72,6 +72,26 @@
     border-radius: 8px;
     border: none; /* Remove qualquer borda */
   }
+
+  /* Ajuste específico para o slide 1 (Escola Teko Porã) */
+  .slide:first-child img {
+    object-position: center 25%;
+  }
+
+  /* Ajuste específico para o slide 1 (Escola Teko Porã) - abordagem alternativa */
+  .slider-container .slide:nth-child(1) img {
+    object-position: center 15%;
+  }
+
+  /* Ajuste específico para o slide 1 (Escola Teko Porã) - com !important */
+  .slider-container .slide:nth-child(1) img {
+    object-position: center 10% !important;
+  }
+
+  /* Ajuste específico para o slide 1 usando a classe da imagem */
+  .slider-container .slide:nth-child(1) .img-desktop {
+    object-position: center -50px !important;
+  }
   
   /* Remover a barra de carregamento */
   .progress-container {

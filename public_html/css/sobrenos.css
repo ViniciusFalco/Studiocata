@@ -59,6 +59,11 @@ body {
         transition: transform 0.3s ease;
     }
 
+    /* Ajuste específico para a imagem Mariela_2.jpg na seção "who" */
+    .who .image img {
+        object-position: center 20%;
+    }
+
     .section .image:hover img {
         transform: scale(1.02);
     }
