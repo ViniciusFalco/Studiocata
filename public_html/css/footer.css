@@ -39,7 +39,7 @@ footer {
 
 /* Ajuste para páginas com slider (desktop) */
 @media screen and (min-width: 1201px) {
-  .slider-wrapper + footer {
+  .projetos + footer {
     display: none; /* Oculta o rodapé na página inicial desktop */
   }
 }

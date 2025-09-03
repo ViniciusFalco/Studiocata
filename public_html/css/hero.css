@@ -1,0 +1,49 @@
+:root{
+  --header-h: 96px;    /* será atualizado via JS */
+  --hero-bg: #fff;
+}
+
+@media (min-width: 1024px){
+  .hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - var(--header-h));
+    min-height: 540px;
+    overflow: hidden;
+    background: var(--hero-bg);
+  }
+  .hero-slide{
+    width: 100%;
+    height: 100%;
+  }
+  .hero-slide img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;         /* padrão */
+    object-position: center;
+  }
+  .hero-slide--panorama img{
+    object-fit: contain;       /* mostra a 1ª imagem inteira */
+    background: var(--hero-bg);
+  }
+
+  /* acabamento minimalista */
+  .hero .frame{
+    max-width: 1400px;
+    height: 100%;
+    margin-inline: auto;
+    padding-inline: 24px;      /* respiro lateral elegante */
+  }
+  .hero .frame img{ 
+    border-radius: 10px; 
+    width: 100%;
+    height: 100%;
+    object-fit: inherit;
+  }
+}
+
+/* Mobile: esconder slider (teremos uma imagem estática fora dele) */
+@media (max-width: 1023px){
+  .hero { display: none; }
+}

@@ -1,9 +1,8 @@
 // slider.js
 document.addEventListener("DOMContentLoaded", function() {
     const slides = document.querySelectorAll('.slider-container .slide');
-    const sliderTitle = document.querySelector('.slider-title');
     let currentSlide = 0;
-    const slideInterval = 7000; // 7 segundos
+    const slideInterval = 8000; // 8 segundos para transições mais suaves
 
     // Pré-carregar imagens
     slides.forEach(slide => {
@@ -11,40 +10,40 @@ document.addEventListener("DOMContentLoaded", function() {
         img.src = slide.querySelector('img').src;
     });
 
-    // Atualiza o título do slider com base no atributo data-title do slide atual
-    function updateTitle() {
-      const title = slides[currentSlide].getAttribute('data-title') || '';
-      if (sliderTitle) {
-        sliderTitle.textContent = title;
-      }
-    }
-
-    // Exibe o próximo slide com efeito de transição deslizante
+    // Exibe o próximo slide com efeito de transição suave
     function showNextSlide() {
       const current = slides[currentSlide];
-      current.classList.remove("active");
-      current.classList.add("slide-exit");
+      
+      // Fade out do slide atual com escala
+      current.style.opacity = '0';
+      current.style.transform = 'translateX(-100%) scale(0.95)';
+      
+      setTimeout(() => {
+        current.classList.remove("active");
+        current.style.opacity = '';
+        current.style.transform = '';
+      }, 600);
 
-      current.addEventListener("transitionend", function handler() {
-        current.classList.remove("slide-exit");
-        current.removeEventListener("transitionend", handler);
-      });
-
+      // Avança para o próximo slide
       currentSlide = (currentSlide + 1) % slides.length;
       const next = slides[currentSlide];
-      next.classList.add("slide-enter");
+      
+      // Fade in do próximo slide com escala
+      next.classList.add("active");
+      next.style.opacity = '0';
+      next.style.transform = 'translateX(100%) scale(1.05)';
+      
       requestAnimationFrame(() => {
-        next.classList.add("active");
-        next.classList.remove("slide-enter");
+        next.style.opacity = '1';
+        next.style.transform = 'translateX(0) scale(1)';
       });
-
-      updateTitle();
     }
 
     // Inicializa o slider
     if (slides.length > 0) {
       slides[currentSlide].classList.add("active");
-      updateTitle();
+      slides[currentSlide].style.opacity = '1';
+      slides[currentSlide].style.transform = 'translateX(0) scale(1)';
       setInterval(showNextSlide, slideInterval);
     }
 });

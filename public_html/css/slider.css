@@ -1,8 +1,18 @@
 /* slider.css */
 
 .slider-wrapper {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* Para compatibilidade com a nova estrutura hero */
+.hero .slider-container {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   position: relative;
   margin: 0;
@@ -11,23 +21,12 @@
   
   /* Título do slider, centralizado acima do container */
   .slider-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 10px;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 18px;
+    display: none; /* Ocultar o título do slider */
   }
   
   /* Container centralizado com fundo branco, bordas arredondadas e sombra */
   .slider-container {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
     position: relative;
@@ -45,54 +44,71 @@
     left: 0;
     width: 100%;
     height: 100%;
-    transition: transform 0.7s ease;
+    transition: all 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
     transform: translateX(100%);
     z-index: 1;
+    opacity: 0;
+    visibility: hidden;
   }
   
   .slide.active {
-    transform: translateX(0);
-    z-index: 2;
+    transform: translateX(0) scale(1);
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
   }
   
   .slide.slide-enter {
-    transform: translateX(100%);
+    transform: translateX(100%) scale(1.05);
+    z-index: 5;
+    opacity: 0;
   }
   
   .slide.slide-exit {
-    transform: translateX(-100%);
+    transform: translateX(-100%) scale(0.95);
+    z-index: 1;
+    opacity: 0;
   }
   
   /* As imagens preenchem todo o container com bordas arredondadas leves */
   .slider-container img {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    object-position: center bottom; /* Ajusta a posição da imagem para baixo */
-    border-radius: 8px;
-    border: none; /* Remove qualquer borda */
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: 0 !important;
+    border: none !important; /* Remove qualquer borda */
+    background-color: #fff !important; /* Fundo branco para preencher espaços vazios */
   }
 
-  /* Ajuste específico para o slide 1 (Escola Teko Porã) */
-  .slide:first-child img {
-    object-position: center 25%;
+  /* Para a nova estrutura hero, sobrescrever com os estilos específicos */
+  .hero .slider-container .slide:first-child img {
+    object-fit: contain !important;
   }
 
-  /* Ajuste específico para o slide 1 (Escola Teko Porã) - abordagem alternativa */
-  .slider-container .slide:nth-child(1) img {
-    object-position: center 15%;
+  .hero .slider-container .slide:not(:first-child) img {
+    object-fit: cover !important;
   }
 
-  /* Ajuste específico para o slide 1 (Escola Teko Porã) - com !important */
-  .slider-container .slide:nth-child(1) img {
-    object-position: center 10% !important;
+  /* Garantir que as imagens dentro da estrutura hero sejam exibidas corretamente */
+  .hero .slide {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
   }
 
-  /* Ajuste específico para o slide 1 usando a classe da imagem */
-  .slider-container .slide:nth-child(1) .img-desktop {
-    object-position: center -50px !important;
+  .hero .slide.active {
+    opacity: 1;
+    visibility: visible;
   }
-  
+
+  .hero .slide img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    transition: opacity 0.8s ease-in-out;
+  }
+
   /* Remover a barra de carregamento */
   .progress-container {
     display: none;
@@ -112,9 +128,15 @@
     
   }
 
+  @media screen and (max-width: 1023px) {
+    .hero {
+      display: none !important;
+    }
+  }
+
 /* Garantir que não haja barra de rolagem */
 body, html {
-  overflow: hidden;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   height: 100%;
