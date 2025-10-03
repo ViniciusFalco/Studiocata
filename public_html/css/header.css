@@ -8,7 +8,7 @@
 }
 
 html, body {
-  font-family: 'Roboto Thin', sans-serif;
+  font-family: "Lexend", sans-serif;
 }
 
 body,
@@ -63,6 +63,8 @@ header {
   font-weight: bold;
   font-size: 20px;
   letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Lexend", sans-serif;
 }
 
 /* Efeito de hover no menu */

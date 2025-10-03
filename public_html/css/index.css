@@ -3,6 +3,7 @@ html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    font-family: "Lexend", sans-serif;
 }
 
 /* Estilo geral da seção de projetos */
@@ -65,6 +66,8 @@ html {
   font-weight: 600;
   color: black;
   text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Lexend", sans-serif;
   /* Remover sublinhado */
 }
 
@@ -75,6 +78,8 @@ html {
   font-weight: 600;
   color: black;
   text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Lexend", sans-serif;
   /* Remover sublinhado */
 }
 
