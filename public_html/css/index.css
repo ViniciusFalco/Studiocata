@@ -63,7 +63,7 @@ html {
 .projeto-item h3 {
   margin: 0;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 300;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
@@ -75,7 +75,7 @@ html {
 .projeto-item h2 {
   margin: 0;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 100;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
