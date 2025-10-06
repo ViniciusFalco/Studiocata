@@ -1,8 +1,18 @@
+/* Registrar Rams W01 Bold local e definir Comfortaa como fonte base desta página */
+@font-face {
+    font-family: "Rams W01";
+    src: url("../font/Rams W01 Bold.woff2") format("woff2"),
+         url("../font/Rams W01 Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Estilos gerais */
 body {
     margin: 0;
     padding: 0;
-    font-family: "Lexend", sans-serif;
+    font-family: "Comfortaa", "Lexend", sans-serif;
     background-color: #fafafa;
     line-height: 1.6;
 }
@@ -59,6 +69,33 @@ body {
         transition: transform 0.3s ease;
     }
 
+    /* Overlay de hover nas imagens clicáveis (about, dialog) */
+    .hover-card { position: relative; }
+    .hover-card .hover-link { display: block; position: relative; text-decoration: none; }
+    .hover-card h3,
+    .hover-card h2 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        opacity: 0;
+        color: #ffffff !important;
+        text-align: center;
+        text-shadow: 0 2px 8px rgba(0,0,0,.45);
+        transition: opacity .3s ease;
+        pointer-events: none;
+        z-index: 2;
+        white-space: nowrap;
+        overflow: visible;
+        width: 90%;
+        text-transform: uppercase;
+        font-family: "Rams W01", "Lexend", sans-serif;
+    }
+    .hover-card h3 { top: 45%; font-size: 48px; font-weight: 700; }
+    .hover-card h2 { top: 64%; font-size: 14px; font-weight: 400; }
+    .hover-card:hover img { filter: blur(3px) brightness(.6); transform: scale(1.04); }
+    .hover-card:hover h3, .hover-card:hover h2 { opacity: 1; }
+
     /* Ajuste específico para a imagem Mariela_2.jpg na seção "who" */
     .who .image img {
         object-position: center 20%;
@@ -76,22 +113,24 @@ body {
 
     .section h3 {
         font-size: 48px;
-        font-weight: 800;
+        font-weight: 700;
         margin-bottom: 30px;
         color: #2c2c2c;
         line-height: 1.2;
         letter-spacing: -0.5px;
         text-transform: uppercase;
-        font-family: "Lexend", sans-serif;
+        font-family: "Rams W01", "Lexend", sans-serif !important;
     }
 
+    /* Textos usam Comfortaa */
     .section p {
         font-size: 18px;
         line-height: 1.8;
-        font-weight: 600;
+        font-weight: 400;
         color: #555;
         margin-bottom: 25px;
-        text-align: justify;
+        text-align: left;
+        hyphens: none;
         margin-right: 0;
     }
 
@@ -127,22 +166,29 @@ body {
         display: block;
     }
 
+    /* Mobile: desativa overlay e esconde os títulos dentro das imagens */
+    .hover-card .hover-link h3,
+    .hover-card .hover-link h2 {
+        display: none !important;
+    }
+
     .section .content {
         padding: 25px;
         overflow-y: auto;
     }
 
     .section h3 {
-        font-size: 40px;
-        font-weight: 900;
+        font-size: 35px;
+        font-weight: 700;
         margin-bottom: 5px;
         text-transform: uppercase;
-        font-family: "Lexend", sans-serif;
+        font-family: "Rams W01", "Lexend", sans-serif !important;
     }
 
     p {
-        text-align: justify;
-        font-weight: 600;
+        text-align: left;
+        hyphens: none;
+        font-weight: 400;
         margin-right: 50px;
     }
 
@@ -162,8 +208,8 @@ body {
 
     /* Estilos para o conteúdo (título e texto) */
     .section .content {
-        text-align: center;
-        padding: 0;
+        text-align: center; /* centraliza o título */
+        padding: 0; /* sem padding extra nas laterais */
         margin: 0;
     }
 
@@ -171,6 +217,8 @@ body {
     .section h3 {
         margin: 0;
     }
+
+    /* Título mantém proximidade original à margem no mobile */
 
     .section p{
         margin: 25px;

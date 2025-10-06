@@ -6,6 +6,108 @@ html {
     font-family: "Lexend", sans-serif;
 }
 
+/* Esconde a barra de rolagem (mantém scroll) */
+html, body { 
+  -ms-overflow-style: none; /* IE e Edge */
+  scrollbar-width: none;   /* Firefox */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar { 
+  display: none; /* Chrome, Safari e Opera */
+}
+
+/* Fonte Rams W01 (apenas nesta página) */
+@font-face {
+  font-family: "Rams W01";
+  src: url("../font/Rams W01 Regular.woff2") format("woff2"),
+       url("../font/Rams W01 Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rams W01";
+  src: url("../font/Rams W01 Bold.woff2") format("woff2"),
+       url("../font/Rams W01 Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Desktop: overlay com título/subtítulo no hover sobre a imagem */
+@media (hover: hover) and (pointer: fine) {
+  .projeto-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .projeto-item:hover {
+    background-color: transparent;
+  }
+
+  .projeto-item img {
+    margin-bottom: 0;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+
+  .projeto-item h3,
+  .projeto-item h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    color: #ffffff !important;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+    white-space: nowrap;
+    overflow: visible;
+    width: 90%;
+  }
+
+  .projeto-item h3 {
+    top: 45%;
+    font-size: 48px !important;
+    font-weight: 700;
+  }
+
+  .projeto-item h2 {
+    top: 64%;
+    color: #ffffff !important;
+  }
+
+  .projeto-item:hover img {
+    filter: blur(3px) brightness(0.6);
+    transform: scale(1.04);
+  }
+
+  .projeto-item:hover h3,
+  .projeto-item:hover h2 {
+    opacity: 1;
+  }
+}
+
+/* Ajustes específicos por item (desktop) para caber o título completo sem quebra */
+@media (hover: hover) and (pointer: fine) {
+  /* index.html ordem dos itens na grade */
+  .grid-container .projeto-item:nth-child(4) h3 { /* Eco Suítes Vila Neblina */
+    font-size: 34px !important;
+  }
+  .grid-container .projeto-item:nth-child(6) h3 { /* Projeto Apartamento Maxhaus */
+    font-size: 42px !important;
+  }
+  .grid-container .projeto-item:nth-child(7) h3 { /* Apartamento Panamby */
+    font-size: 46px !important;
+  }
+  .grid-container .projeto-item:nth-child(11) h3 { /* Ribeirão das Neves */
+    font-size: 46px !important;
+  }
+}
+
 /* Estilo geral da seção de projetos */
 .projetos {
   display: block;
@@ -63,11 +165,11 @@ html {
 .projeto-item h3 {
   margin: 0;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 700 !important;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Lexend", sans-serif;
+  font-family: "Rams W01", "Lexend", sans-serif !important;
   /* Remover sublinhado */
 }
 
@@ -75,11 +177,11 @@ html {
 .projeto-item h2 {
   margin: 0;
   font-size: 12px;
-  font-weight: 100;
+  font-weight: 400 !important;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Lexend", sans-serif;
+  font-family: "Rams W01", "Lexend", sans-serif !important;
   /* Remover sublinhado */
 }
 
@@ -117,3 +219,14 @@ html {
     font-size: 14px;
   }
 }
+
+/* Cabeçalho apenas na index: caixa alta e peso 400 */
+/* Aumenta especificidade para sobrescrever typography.css apenas na index */
+body:not(.no-typography-overrides) header .nav-list a,
+header .nav-list a {
+  text-transform: uppercase !important;
+  font-weight: 700 !important; /* testar a variante Bold */
+  font-family: "Rams W01", "Lexend", sans-serif !important;
+}
+
+/* (Todos os cards usam Rams W01 para título/subtítulo) */

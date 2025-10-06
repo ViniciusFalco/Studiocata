@@ -73,7 +73,7 @@ body {
   line-height:1.1; 
   letter-spacing:.02em; 
   color:var(--ink);
-  font-weight: 300;
+  font-weight: var(--sc-title-weight);
   text-transform: uppercase;
   margin-bottom: 0.5rem;
   font-family: "Lexend", sans-serif;
@@ -84,7 +84,7 @@ body {
   color:var(--muted); 
   font-size:1.1rem;
   line-height: 1.5;
-  font-weight: 100;
+  font-weight: var(--sc-subtitle-weight);
 }
 
 .contact-grid{
@@ -184,7 +184,7 @@ body {
 
 .tile-title{
   font-size:1.15rem; 
-  font-weight:600; 
+  font-weight: var(--sc-title-weight); 
   letter-spacing:.01em;
   margin-bottom: 0.25rem;
   color: var(--ink);
@@ -193,7 +193,7 @@ body {
 .tile-cta{
   font-size:1rem; 
   color:var(--muted);
-  font-weight: 600;
+  font-weight: var(--sc-text-weight);
   transition: color .3s ease;
 }
 

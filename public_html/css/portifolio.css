@@ -11,12 +11,22 @@ header
 }
 
 
+/* Fonte Rams W01 para títulos dos projetos */
+@font-face {
+  font-family: "Rams W01";
+  src: url("../font/Rams W01 Bold.woff2") format("woff2"),
+       url("../font/Rams W01 Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 .titulo-portifolio{
   text-align: center;
   font-size: 60px;
   text-transform: uppercase;
-  font-family: "Lexend", sans-serif;
-  font-weight: 300;
+  font-family: "Rams W01", "Lexend", sans-serif !important;
+  font-weight: 700 !important;
 }
 
 /* Seta para cima */
@@ -162,7 +172,7 @@ nav ul li:hover::before {
   color: #333;
   padding: 15px 30px;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: var(--sc-text-weight);
   letter-spacing: 0.5px;
   cursor: pointer;
   border-radius: 0;
@@ -209,12 +219,13 @@ nav ul li:hover::before {
 
 .intro-container h2 {
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 700 !important; /* Rams Bold */
   color: #2c2c2c;
   margin-bottom: 40px;
   line-height: 1.2;
   text-align: left;
   letter-spacing: -0.5px;
+  font-family: "Rams W01", "Lexend", sans-serif !important;
 }
 
 .intro-text p {
@@ -223,34 +234,37 @@ nav ul li:hover::before {
   color: #444;
   margin-bottom: 28px;
   text-align: justify;
-  font-weight: 600;
+  font-weight: 400;
+  font-family: "Comfortaa", "Lexend", sans-serif !important;
 }
 
 .intro-text p:first-child {
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   color: #333;
   font-size: 20px;
   margin-bottom: 35px;
+  font-family: "Comfortaa", "Lexend", sans-serif !important;
 }
 
 .intro-text p:last-child {
   margin-bottom: 0;
-  font-weight: 500;
+  font-weight: 400;
   color: #2c2c2c;
   font-style: italic;
+  font-family: "Comfortaa", "Lexend", sans-serif !important;
 }
 
 /* Texto em destaque com maior grossura */
 .highlight-text {
-  font-weight: 500 !important;
+  font-weight: var(--sc-text-weight) !important;
   color: #1a1a1a !important;
   letter-spacing: -0.2px;
 }
 
 /* Título com partes em destaque */
 .intro-container h2 strong {
-  font-weight: 600;
+  font-weight: var(--sc-title-weight);
   color: #1a1a1a;
 }
 
@@ -290,12 +304,12 @@ nav ul li:hover::before {
   }
 
   .highlight-text {
-    font-weight: 500 !important;
+    font-weight: var(--sc-text-weight) !important;
     font-size: 16px;
   }
 
   .intro-container h2 strong {
-    font-weight: 600;
+    font-weight: var(--sc-title-weight);
   }
 }
 
@@ -332,12 +346,12 @@ nav ul li:hover::before {
   }
 
   .highlight-text {
-    font-weight: 500 !important;
+    font-weight: var(--sc-text-weight) !important;
     font-size: 15px;
   }
 
   .intro-container h2 strong {
-    font-weight: 600;
+    font-weight: var(--sc-title-weight);
   }
 }
 
@@ -381,12 +395,12 @@ nav ul li:hover::before {
   }
 
   .highlight-text {
-    font-weight: 500 !important;
+  font-weight: var(--sc-text-weight) !important;
     font-size: 22px;
   }
 
   .intro-container h2 strong {
-    font-weight: 600;
+  font-weight: var(--sc-title-weight);
   }
 }
 

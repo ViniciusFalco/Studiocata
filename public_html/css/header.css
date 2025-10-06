@@ -1,4 +1,23 @@
 /* IMPORTAÇÃO DE FONTE */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('./typography.css');
+/* Fonte Rams W01 para o cabeçalho */
+@font-face {
+  font-family: 'Rams W01';
+  src: url('/font/Rams W01 Regular.woff2') format('woff2'),
+       url('/font/Rams W01 Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Rams W01';
+  src: url('/font/Rams W01 Bold.woff2') format('woff2'),
+       url('/font/Rams W01 Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 @font-face {
   font-family: 'Roboto Thin';
   font-style: normal;
@@ -57,14 +76,31 @@ header {
   position: relative;
 }
 
-.nav-list a {
+header .nav-list a {
   text-decoration: none;
   color: black;
-  font-weight: 300;
+  font-weight: 700 !important;
   font-size: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-family: "Lexend", sans-serif;
+  font-family: "Rams W01", "Lexend", sans-serif !important;
+}
+
+/* Indicação da página ativa (exceto logo) */
+header .nav-list a.active {
+  position: relative;
+}
+@media (min-width: 1200px) {
+  header .nav-list a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-radius: 1px;
+  }
 }
 
 /* Efeito de hover no menu */

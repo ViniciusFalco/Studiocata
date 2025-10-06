@@ -1,0 +1,49 @@
+/* Tipografia centralizada para todo o site */
+
+/* Família base */
+html, body {
+  font-family: "Lexend", sans-serif;
+}
+
+/* Pesos padronizados */
+:root {
+  --sc-header-weight: 400;   /* Cabeçalho */
+  --sc-title-weight: 400;    /* Títulos */
+  --sc-subtitle-weight: 200; /* Subtítulos */
+  --sc-text-weight: 200;     /* Textos */
+}
+
+/* Cabeçalho (menu) */
+body:not(.no-typography-overrides) .nav-list a {
+  text-transform: uppercase;
+  font-weight: var(--sc-header-weight);
+  font-family: "Lexend", sans-serif;
+  letter-spacing: 2px;
+}
+
+/* Títulos comuns */
+body:not(.no-typography-overrides) h1,
+body:not(.no-typography-overrides) .titulo-portifolio,
+body:not(.no-typography-overrides) .projeto-item h3,
+body:not(.no-typography-overrides) .section h3,
+body:not(.no-typography-overrides) .contact-title {
+  text-transform: uppercase;
+  font-weight: var(--sc-title-weight);
+  font-family: "Lexend", sans-serif;
+}
+
+/* Subtítulos comuns */
+body:not(.no-typography-overrides) h2,
+body:not(.no-typography-overrides) .projeto-item h2,
+body:not(.no-typography-overrides) .contact-sub {
+  text-transform: uppercase;
+  font-weight: var(--sc-subtitle-weight);
+  font-family: "Lexend", sans-serif;
+}
+
+/* Textos gerais */
+body:not(.no-typography-overrides) p,
+body:not(.no-typography-overrides) .footer-text {
+  font-weight: var(--sc-text-weight);
+  font-family: "Lexend", sans-serif;
+}

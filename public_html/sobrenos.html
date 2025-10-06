@@ -6,48 +6,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="./img/logopreta.PNG">
     <title>Studio Catá Arquitetura</title>
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/sobrenos.css">
     <link rel="stylesheet" href="./css/footer.css">
 </head>
-<body>
-    <!-- Cabeçalho -->
-    <header>
-        <a href="./index.html">
-            <div class="logo">
-                <img src="img/logopreta.PNG" alt="Logo">
-            </div>
-        </a>
-    
-        <div class="mobile-menu">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    
-        <nav>
-            <ul class="nav-list">
-              <li class="logo-item">
-                <a href="./index.html">
-                  <div class="logo">
-                    <img src="img/logopreta.PNG" alt="Logo">
-                  </div>
-                </a>
-              </li>
-              <li><a href="./projetos.html">Projetos</a></li>
-              <li><a href="./obras.html">Obras Concluídas</a></li>
-              <li><a href="./sobrenos.html">Sobre nós</a></li>
-              <li><a href="./contato.html">Contato</a></li>
-            </ul>
-          </nav>
-    </header>
+<body class="no-typography-overrides">
+    <!-- Cabeçalho (injetado via partial em js/header.js) -->
+    <header></header>
 
     <main class="main"> <!-- Adicionando a classe "main" para aplicar estilos de layout -->
         <section class="about section"> <!-- Adicionando a classe "section" para aplicar estilos de seção -->
-            <div class="image">
-                <img src="./img/projetos/apesiqueira/lite/b8a47d3f0a324c9694fb42988bd2a6ed.jpg" alt="Nossa Arquitetura">
+            <div class="image hover-card">
+                <a href="./pags/apesiqueira.html" class="hover-link" aria-label="Ver projeto Apê Siqueira">
+                    <img src="./img/projetos/apesiqueira/lite/b8a47d3f0a324c9694fb42988bd2a6ed.jpg" alt="Apê Siqueira">
+                    <h3>Apê Siqueira</h3>
+                    <h2>Cataguases, MG - 2025</h2>
+                </a>
             </div>
             <div class="content about-content">
                 <h3>Nossa Arquitetura</h3>
@@ -72,8 +49,12 @@
 
         <!-- Seção 3 -->
         <section class="dialog section"> <!-- Adicionando a classe "section" para aplicar estilos de seção -->
-            <div class="image">
-                <img src="./img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekopora_2.jpg" alt="Diálogo">
+            <div class="image hover-card">
+                <a href="./pags/escolatekopora.html" class="hover-link" aria-label="Ver projeto Escola Teko Porã">
+                    <img src="./img/projetos/08 - ESCOLA TEKO PORÃ - MANAUS, AM - 2024/escolatekopora_2.jpg" alt="Escola Teko Porã">
+                    <h3>Escola Teko Porã</h3>
+                    <h2>Manaus, AM - 2025</h2>
+                </a>
             </div>
             <div class="content dialog-content">
                 <h3>Diálogo</h3>

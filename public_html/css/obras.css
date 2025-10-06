@@ -9,6 +9,61 @@ html {
   font-family: "Lexend", sans-serif;
 }
 
+/* Desktop: overlay com título/subtítulo no hover sobre a imagem */
+@media (hover: hover) and (pointer: fine) {
+  .projeto-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .projeto-item:hover {
+    background-color: transparent;
+  }
+
+  .projeto-item img {
+    margin-bottom: 0;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+
+  .projeto-item h3,
+  .projeto-item h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    color: #ffffff !important;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
+  }
+
+  .projeto-item h3 {
+    top: 45%;
+  }
+
+  .projeto-item h2 {
+    top: 58%;
+    color: #ffffff !important;
+  }
+
+  .projeto-item:hover img {
+    filter: blur(3px) brightness(0.6);
+    transform: scale(1.04);
+  }
+
+  .projeto-item:hover h3,
+  .projeto-item:hover h2 {
+    opacity: 1;
+  }
+}
+
 /* Estilo geral da seção de projetos */
 .projetos {
   padding: 0 20px;
@@ -56,11 +111,11 @@ html {
 .projeto-item h3 {
   margin: 0;
   font-size: 28px;
-  font-weight: 300;
+  font-weight: 700 !important;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Lexend", sans-serif;
+  font-family: "Rams W01", "Lexend", sans-serif !important;
   /* Remover sublinhado */
 }
 
@@ -68,11 +123,11 @@ html {
 .projeto-item h2 {
   margin: 0;
   font-size: 12px;
-  font-weight: 100;
+  font-weight: 400 !important;
   color: black;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Lexend", sans-serif;
+  font-family: "Rams W01", "Lexend", sans-serif !important;
   /* Remover sublinhado */
 }
 

@@ -14,34 +14,8 @@
   </head>
 
   <body>
-    <header>
-      <a href="./index.html">
-        <div class="logo">
-          <img src="img/logopreta.PNG" alt="Logo">
-        </div>
-      </a>
-      <div class="mobile-menu">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
-  
-      <nav>
-        <ul class="nav-list">
-          <li class="logo-item">
-            <a href="./index.html">
-              <div class="logo">
-                <img src="img/logopreta.PNG" alt="Logo">
-              </div>
-            </a>
-          </li>
-          <li><a href="./projetos.html">Projetos</a></li>
-          <li><a href="./obras.html">Obras Concluídas</a></li>
-          <li><a href="./sobrenos.html">Sobre nós</a></li>
-          <li><a href="./contato.html">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
+    <!-- Cabeçalho (injetado via partial em js/header.js) -->
+    <header></header>
 
     <section class="projetos">
       <div class="grid-container">
@@ -74,7 +48,7 @@
             alt="Projeto 2"
             loading="lazy"
           />
-          <h3>Projeto Apartamento Maxhaus</h3>
+          <h3>Apartamento Maxhaus</h3>
           <h2>São Paulo, SP - 2024</h2>
         </a>
         <a href="./pags/domus.html" class="projeto-item">
@@ -133,52 +107,5 @@
     </footer>
 
     <script src="./js/header.js"></script>
-    <script>
-      // Fade-in ao carregar imagens
-      document.querySelectorAll('.image-container img').forEach(img => {
-        if (img.complete) {
-          img.classList.add('loaded');
-        }
-        img.addEventListener('load', () => {
-          img.classList.add('loaded');
-        });
-      });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/blurhash-image@1.1.0/dist/blurhash-image.min.js"></script>
-    <script>
-      BlurhashImage.init({
-        selector: '.image-container img',
-        blurhash: 'L5H2EC=PM+yV0g-mq.wG9c010J}I' // Hash de exemplo
-      });
-    </script>
-    <script>
-      // Verifica se a imagem já está carregada OU usa Intersection Observer
-      const handleImageLoad = (img) => {
-        if (img.complete) {
-          img.classList.add('loaded');
-        } else {
-          img.addEventListener('load', () => {
-            img.classList.add('loaded');
-          });
-        }
-      };
-    
-      // Observa quando a imagem entra na viewport
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            handleImageLoad(img);
-            observer.unobserve(img);
-          }
-        });
-      });
-    
-      // Aplica a todos os placeholders
-      document.querySelectorAll('.image-container img').forEach(img => {
-        observer.observe(img);
-      });
-    </script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
   </body>
 </html>
